@@ -1,9 +1,36 @@
+$main: #8F00FF;
+$text: #201925;
+$greyish: #A2B6C3;
+
 *, *::after, *::before{
     box-sizing: border-box;
 }
 
 body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
     margin: 0;
     padding: 0;
     font-family: 'Roboto Mono', monospace;
+}
+
+#app{
+    background: white;
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+    &__a{
+        text-decoration: none;
+        color: #0085EA; 
+    }
 }
