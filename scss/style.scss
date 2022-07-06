@@ -1,5 +1,5 @@
 $main: #8F00FF;
-$text: #201925;
+$text: #3c2e45;
 $greyish: #A2B6C3;
 
 *, *::after, *::before{
@@ -21,6 +21,35 @@ body{
     width: 300px;
     padding: 10px;
     border-radius: 10px;
+}
+
+.title{
+    text-align: center;
+}
+
+.second{
+    text-align:center;
+    color: rgb(41, 41, 41);
+    letter-spacing: 1px;
+}
+
+.bmi-calc{
+    &__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+
+    }
+
+    &__label{
+        transform:translateY(-10px);
+    }
+}
+
+.range{
+    width: 100%;
 }
 
 .footer{
