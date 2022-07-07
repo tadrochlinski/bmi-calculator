@@ -17,18 +17,22 @@ body {
 #app {
   background: white;
   width: 300px;
-  padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+          box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 .title {
   text-align: center;
+  color: #3A2A46;
+  letter-spacing: 1px;
 }
 
 .second {
   text-align: center;
-  color: #292929;
-  letter-spacing: 1px;
+  color: #f1f7fa;
+  letter-spacing: 2px;
 }
 
 .bmi-calc__form {
@@ -46,11 +50,20 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 120px;
+  margin-bottom: 10px;
+  padding: 0px 45px;
 }
 
 .bmi-calc__label {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
+  font-size: 18px;
+}
+
+.bmi-calc__output {
+  background: #8F00FF;
+  width: 100%;
+  padding: 15px;
 }
 
 .range {
@@ -83,19 +96,19 @@ body {
 .range::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: #8F00FF;
-  -webkit-transform: translateY(-7px);
-          transform: translateY(-7px);
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
 }
 
 .range::-moz-range-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: #8F00FF;
 }
@@ -103,8 +116,8 @@ body {
 .range::-ms-thumb {
   -webkit-appearance: none;
   border: none;
-  height: 16px;
-  width: 16px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: #8F00FF;
 }

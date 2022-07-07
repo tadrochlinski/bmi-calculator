@@ -1,5 +1,5 @@
 $main: #8F00FF;
-$text: #3c2e45;
+$text: #3A2A46;
 $greyish: #eaf6ff;
 
 *, *::after, *::before{
@@ -19,18 +19,21 @@ body{
 #app{
     background: white;
     width: 300px;
-    padding: 10px;
-    border-radius: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 .title{
     text-align: center;
+    color: $text;
+    letter-spacing: 1px;
 }
 
 .second{
     text-align:center;
-    color: rgb(41, 41, 41);
-    letter-spacing: 1px;
+    color: #f1f7fa;
+    letter-spacing: 2px;
 }
 
 .bmi-calc{
@@ -40,11 +43,20 @@ body{
         justify-content: space-between;
         align-items: center;
         height: 120px;
-
+        margin-bottom: 10px;
+        padding: 0px 45px;
     }
 
     &__label{
         transform:translateY(-10px);
+        font-size: 18px;
+    }
+
+    &__output{
+        background: $main;
+        width: 100%;
+        padding: 15px;
+        
     }
 }
 
@@ -70,8 +82,8 @@ body{
 @mixin thumb-styles{
     -webkit-appearance: none;
     border: none;
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     background: $main;
     // transform: translateY(-7px);
@@ -88,7 +100,7 @@ body{
   
 .range::-webkit-slider-thumb {
     @include thumb-styles;
-    transform: translateY(-7px);
+    transform: translateY(-8px);
 }
 
 
