@@ -60,10 +60,32 @@ body {
   font-size: 18px;
 }
 
-.bmi-calc__output {
+.bmi-calc__output-container {
   background: #8F00FF;
   width: 100%;
   padding: 15px;
+}
+
+.bmi-calc__output-div {
+  color: #f1f7fa;
+  font-weight: 700;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .range {
