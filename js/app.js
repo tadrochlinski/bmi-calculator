@@ -15,6 +15,8 @@ window.onload = () =>{
     if(localStorage.length > 0){
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         const {uWeight, uHeight, bmi, category} = userInfo;
+        weight = uWeight;
+        height = uHeight;
         output.innerHTML = outputDivContent(parseFloat(bmi, 10).toPrecision(3), category);
         weightInp.value = parseInt(uWeight, 10);
         heightInp.value = parseInt(uHeight * 100, 10);
