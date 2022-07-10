@@ -8,14 +8,18 @@ const heightLabel = document.querySelector('#height-label');
 let weight = 80, height = 1.75;
 
 window.onload = () =>{
+    if(localStorage.length < 1){
+        localStorage.setItem('userInfo', JSON.stringify(bmiCalc(weight, height)));
+    }
+
     if(localStorage.length > 0){
         const userInfo = JSON.parse(localStorage.getItem('userInfo'));
         const {uWeight, uHeight, bmi, category} = userInfo;
-        output.innerHTML = outputDivContent(bmi.toPrecision(3), category);
-        weightInp.value = uWeight;
-        heightInp.value = uHeight;
+        output.innerHTML = outputDivContent(parseFloat(bmi, 10).toPrecision(3), category);
+        weightInp.value = parseInt(uWeight, 10);
+        heightInp.value = parseInt(uHeight * 100, 10);
         weightLabel.innerHTML = `${uWeight}kg`;
-        heightLabel.innerHTML = `${parseInt(uHeight)}cm`
+        heightLabel.innerHTML = `${parseInt(uHeight * 100)}cm`
     }
 }
 
@@ -31,7 +35,7 @@ const onSlidersChange = (inp) =>{
 
     if(inp.id === 'height-input'){
         height = parseFloat(inp.value)/100;
-        heightLabel.innerHTML = `${parseInt(height * 100)}cm`
+        heightLabel.innerHTML = `${parseInt(height * 100, 10)}cm`
     }
     
     const {bmi, category} = bmiCalc(weight, height);
@@ -41,21 +45,21 @@ const onSlidersChange = (inp) =>{
 
 const bmiCalc = (weight, height) =>{
     const scale = [
-        {name: 'underweight', min: 0, max: 18.5},
-        {name: 'normal', min: 18.5, max: 24.9},
-        {name: 'overweight', min: 25, max: 29.9},
-        {name: 'obese', min: 30, max:34.9},
-        {name: 'extremly obese', min: 35, max: 200},
+        {name: 'underweight', min: 0, max: 18.50},
+        {name: 'normal', min: 18.50, max: 24.90},
+        {name: 'overweight', min: 24.91, max: 29.90},
+        {name: 'obese', min: 29.91, max:34.90},
+        {name: 'extremly obese', min: 34.91, max: 200},
     ];
 
     const bmi = weight/(height*height);
     let weightCat;
     scale.forEach((cat , i)=>{
         const {name, min, max} = cat;
-        if(bmi > min && bmi < max) weightCat = name;
+        if(bmi >= min && bmi <= max) weightCat = name;
     });
 
-    const userInfo = {uWeight: weight, uHeight: height * 100, bmi: bmi, category: weightCat};
+    const userInfo = {uWeight: weight, uHeight: height, bmi: bmi, category: weightCat};
 
 
     return userInfo;

@@ -7,10 +7,13 @@ $greyish: #eaf6ff;
 }
 
 body{
+    position: relative;
     width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
@@ -56,7 +59,6 @@ body{
         background: $main;
         width: 100%;
         padding: 15px;  
-
     }
 
     &__output-div{
@@ -74,14 +76,14 @@ body{
 }
 
 .range {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome*/
+    -webkit-appearance: none;
+    width: 100%; 
+    background: transparent; 
     transition: transform 200ms;
     cursor: pointer;
 
     &:focus {
-        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+        outline: none; 
         transform: scale(1.1);
     }
     
@@ -99,13 +101,11 @@ body{
     width: 20px;
     border-radius: 50%;
     background: $main;
-    // transform: translateY(-7px);
 }   
 
 @mixin track-styles{
     width: 100%;
     height: 3px;
-    /* Hides the slider so custom styles can be added */
     background: $greyish; 
     border-color: transparent;
     color: transparent;
@@ -136,16 +136,4 @@ body{
 
 .range::-ms-track{
     @include track-styles;
-}
-
-.footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-
-    &__a{
-        text-decoration: none;
-        color: #0085EA; 
-    }
 }
